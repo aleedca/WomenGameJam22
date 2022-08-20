@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementAir : MonoBehaviour
+public class PlayerMovementSpace : MonoBehaviour
 {
     public float JumpForce;
     public float Speed;
@@ -15,7 +15,7 @@ public class PlayerMovementAir : MonoBehaviour
     void Start()
     {
         ridigbody2D = GetComponent<Rigidbody2D>();
-        Physics2D.gravity = new Vector2(0, 9.8f);
+        Physics2D.gravity = new Vector2(0, -9.8f);
         //animator = GetComponent<Animator>();
     }
 
@@ -24,8 +24,8 @@ public class PlayerMovementAir : MonoBehaviour
     {
         Horizontal = Input.GetAxisRaw("Horizontal") * Speed;
 
-        if(Horizontal > 0.0f) transform.localScale = new Vector3(-0.1578557f, 0.1489582f, 1.0f);
-        else if (Horizontal < 0.0f) transform.localScale = new Vector3(0.1578557f, 0.1489582f, 1.0f);
+        if(Horizontal < 0.0f) transform.localScale = new Vector3(-0.1578557f, 0.1489582f, 1.0f);
+        else if (Horizontal > 0.0f) transform.localScale = new Vector3(0.1578557f, 0.1489582f, 1.0f);
 
         //animator.SetBool("Walking", Horizontal != 0.0f);
 
@@ -37,16 +37,15 @@ public class PlayerMovementAir : MonoBehaviour
         else Grounded = false;
 
         // Salto
-        if (Input.GetKeyDown(KeyCode.W) && Grounded)
+        if (Input.GetKeyDown(KeyCode.S) && Grounded)
         {
             Jump();
             Debug.Log("jumping");
         }
-
     }
 
     private void Jump(){
-        ridigbody2D.AddForce(Vector2.down * JumpForce);
+        ridigbody2D.AddForce(Vector2.up * JumpForce);
     }
 
     private void FixedUpdate(){
