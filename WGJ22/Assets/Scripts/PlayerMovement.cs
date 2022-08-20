@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Horizontal = Input.GetAxisRaw("Horizontal");
+        Horizontal = Input.GetAxisRaw("Horizontal") * Speed;
 
         if(Horizontal < 0.0f) transform.localScale = new Vector3(-0.1578557f, 0.1489582f, 1.0f);
         else if (Horizontal > 0.0f) transform.localScale = new Vector3(0.1578557f, 0.1489582f, 1.0f);
