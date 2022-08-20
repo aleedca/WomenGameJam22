@@ -26,8 +26,8 @@ public class PlayerMovementAir : MonoBehaviour
     {
         Horizontal = Input.GetAxisRaw("Horizontal") * Speed;
 
-        if(Horizontal < 0.0f) spriteRenderer.flipX = true;
-        else if (Horizontal > 0.0f) spriteRenderer.flipX = false;
+        if(Horizontal > 0.0f) spriteRenderer.flipX = true;
+        else if (Horizontal < 0.0f) spriteRenderer.flipX = false;
 
         animator.SetBool("isRunning", Horizontal != 0.0f);
 
