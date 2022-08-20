@@ -8,6 +8,7 @@ public class PlayerMovementSpace : MonoBehaviour
     public float Speed;
     private Rigidbody2D ridigbody2D;
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
     private float Horizontal;
     private bool Grounded;
 
@@ -16,7 +17,8 @@ public class PlayerMovementSpace : MonoBehaviour
     {
         ridigbody2D = GetComponent<Rigidbody2D>();
         Physics2D.gravity = new Vector2(0, -9.8f);
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -24,10 +26,10 @@ public class PlayerMovementSpace : MonoBehaviour
     {
         Horizontal = Input.GetAxisRaw("Horizontal") * Speed;
 
-        if(Horizontal < 0.0f) transform.localScale = new Vector3(-0.1578557f, 0.1489582f, 1.0f);
-        else if (Horizontal > 0.0f) transform.localScale = new Vector3(0.1578557f, 0.1489582f, 1.0f);
+        if(Horizontal < 0.0f) spriteRenderer.flipX = true;
+        else if (Horizontal > 0.0f) spriteRenderer.flipX = false;
 
-        //animator.SetBool("Walking", Horizontal != 0.0f);
+        animator.SetBool("isRunning", Horizontal != 0.0f);
 
         Debug.DrawRay(transform.position, Vector3.down * 0.1578557f, Color.red);
         if (Physics2D.Raycast(transform.position, Vector3.down, 0.1f))
