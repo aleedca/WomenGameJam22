@@ -593,10 +593,10 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 2
   m_Size: {x: 5.12, y: 5.12}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
+  m_AdaptiveModeThreshold: 1
+  m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
@@ -608,8 +608,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634789047}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2341, y: 0.3362, z: -0.00986949}
-  m_LocalScale: {x: 4.7670693, y: 1.946825, z: 1}
+  m_LocalPosition: {x: -1.665, y: 0.3362, z: -0.00986949}
+  m_LocalScale: {x: 4.5987916, y: 1.946825, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 82725191}
@@ -686,15 +686,15 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1309817705
   m_SortingLayer: -1
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 706583bc050ae9444a2978c73422d91c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 25.6, y: 14.4}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
+  m_Size: {x: 48.14018, y: 19.91287}
+  m_AdaptiveModeThreshold: 1
+  m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
@@ -706,7 +706,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828708125}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.94, y: 2.35, z: -0.00986949}
+  m_LocalPosition: {x: -1.0559, y: 0.2536, z: -0.00986949}
   m_LocalScale: {x: 0.47265863, y: 0.57549727, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -725,7 +725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3667f7a511a04154b9e362bdffcacac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadMovimiento: {x: 0.3, y: 0}
+  velocidadMovimiento: {x: 0.2, y: 0}
 --- !u!1001 &918633758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1225,9 +1225,9 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 25.6, y: 14.4}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
+  m_Size: {x: 62.11994, y: 19.350231}
+  m_AdaptiveModeThreshold: 1
+  m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
@@ -1239,7 +1239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291402856}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.12, y: -1.1, z: -0.00986949}
+  m_LocalPosition: {x: -1.29, y: 1.38, z: -0.00986949}
   m_LocalScale: {x: 0.38181764, y: 0.482659, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1258,7 +1258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3667f7a511a04154b9e362bdffcacac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadMovimiento: {x: 0.3, y: 0}
+  velocidadMovimiento: {x: 0.1, y: 0}
 --- !u!1 &1327353987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,15 +1317,15 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1309817705
   m_SortingLayer: -1
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 73a29ca9b790d514d903531bebcda415, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 25.6, y: 14.4}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
+  m_Size: {x: 49.484947, y: 15.070207}
+  m_AdaptiveModeThreshold: 1
+  m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
@@ -1337,7 +1337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1327353987}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.38, y: -2.5, z: -0.00986949}
+  m_LocalPosition: {x: -1.6828, y: 0.9421, z: -0.00986949}
   m_LocalScale: {x: 0.47392505, y: 0.5844219, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1356,7 +1356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3667f7a511a04154b9e362bdffcacac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadMovimiento: {x: 0.3, y: 0}
+  velocidadMovimiento: {x: 0.2, y: 0}
 --- !u!1 &1675087917
 GameObject:
   m_ObjectHideFlags: 0
