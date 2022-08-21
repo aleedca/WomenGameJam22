@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D ridigbody2D;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private CapsuleCollider2D capsulleCollider;
     private float Horizontal;
     private bool Grounded;
 
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
         ridigbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        capsulleCollider = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
@@ -30,12 +32,18 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetBool("isRunning", Horizontal != 0.0f);
 
-        Debug.DrawRay(transform.position, Vector3.down * 0.5f, Color.red);
-        if (Physics2D.Raycast(transform.position, Vector3.down, 0.1f))
+        float rayDistance = 1.0f;
+        RaycastHit2D raycast = Physics2D.Raycast(transform.position, Vector2.down, rayDistance);
+        Debug.Log(raycast.collider);
+        Debug.DrawRay(transform.position, Vector2.down * rayDistance, Color.red);
+        if (raycast.collider != null)
         {
             Grounded = true;
+            //Debug.Log(Grounded);
         }
         else Grounded = false;
+
+        animator.SetBool("isJumping", !Grounded);
 
         // Salto
         if (Input.GetKeyDown(KeyCode.S) && Grounded)
