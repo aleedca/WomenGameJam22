@@ -18,8 +18,10 @@ public class Bubble : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && collision.gameObject.GetComponent<PlayerMovement>())
+        if (collision.gameObject.tag == "Player" )
+        //&& collision.gameObject.GetComponent<PlayerMovement>()
             activarfade();
+            Debug.Log("prueba");
      //bubble.SetBool("activar", true);       
     }
     public void activarfade()

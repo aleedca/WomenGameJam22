@@ -5,8 +5,8 @@ using System;
 
 public class CometaScript : MonoBehaviour
 {
-    private float movY = 0.1f;
-    private float movX = 0.1f;
+    private float movY = 0.3f;
+    private float movX = 0.3f;
     private float sign = 1;
     private float limitX1;
     private float limitX2;
@@ -22,12 +22,13 @@ public class CometaScript : MonoBehaviour
     void Start()
     {
         if (LeftToRight) {
-            limitX1 = this.transform.position.x - 10f;
+            limitX1 = this.transform.position.x - 4f;
             limitX2 = this.transform.position.x;
+            sign = -1;
         }
         else if (!LeftToRight && !isStatic){
             limitY1 = this.transform.position.y;
-            limitY2 = 4- this.transform.position.y;
+            limitY2 = 3- this.transform.position.y;
         }
 
     }
@@ -35,9 +36,6 @@ public class CometaScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Debug.Log(LeftToRight);
-        Debug.Log(isStatic);
 
         if (LeftToRight) MoveLeftAndRight();
         else if (!LeftToRight && !isStatic) MoveUpAndDown();
@@ -48,14 +46,16 @@ public class CometaScript : MonoBehaviour
         if (this.transform.position.y + (movY * Speed) >= limitY2 || this.transform.position.y - (movY * Speed) <= limitY1){
             sign = sign * -1;
         }
-        transform.position = new Vector2(this.transform.position.x, this.transform.position.y + (movY * Speed * sign));
+        transform.position = new Vector2(this.transform.position.x, this.transform.position.y - (movY * Speed * sign));
     }
 
     void MoveLeftAndRight(){
-        if (Math.Abs(this.transform.position.x + (movX * Speed)) >= Math.Abs(limitX2) || Math.Abs(this.transform.position.x - (movX * Speed)) <= Math.Abs(limitX1)){
+        Debug.Log( this.transform.position.x + (movX * Speed) >=  limitX2);
+        Debug.Log( this.transform.position.x - (movX * Speed) <=  limitX1);
+        if (this.transform.position.x + (movX * Speed) >= limitX2 + 0.3f || this.transform.position.x - (movX * Speed) <= limitX1){
             sign = sign * -1;
         }
-        transform.position = new Vector2(this.transform.position.x + (movX * Speed * sign), this.transform.position.y);
+        transform.position = new Vector2(this.transform.position.x - (movX * Speed * sign), this.transform.position.y);
     }
 
 }
