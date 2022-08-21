@@ -9,14 +9,7 @@ public class LevelLoaderScript : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        //if(Input.GetKeyDown(KeyCode.L))
-        //{
-            LoadNextLevel();
-        //}
-    }
+    
 
     public void LoadNextLevel()
     {
@@ -32,6 +25,9 @@ public class LevelLoaderScript : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         // Load scene
-        SceneManager.LoadScene(levelIndex);
+        if(levelIndex == 7){
+            SceneManager.LoadScene(1);
+        }
+        else SceneManager.LoadScene(levelIndex);
     }
 }
