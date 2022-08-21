@@ -2,6 +2,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BacteriasScript : MonoBehaviour
 {
@@ -57,5 +58,10 @@ public class BacteriasScript : MonoBehaviour
             sign = sign * -1;
         }
         transform.position = new Vector2(this.transform.position.x + (movX * Speed * sign), this.transform.position.y);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag=="Player"&&collision.gameObject.GetComponent<PlayerMovement>())
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
