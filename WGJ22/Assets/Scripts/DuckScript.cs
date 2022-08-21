@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 using Random = System.Random;
 
@@ -59,5 +60,10 @@ public class DuckScript : MonoBehaviour
         posX = maxX;
         posY = (float)rd.Next(-2, 4);
         transform.position = new Vector2(posX, posY);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player" && collision.gameObject.GetComponent<PlayerMovement>())
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
