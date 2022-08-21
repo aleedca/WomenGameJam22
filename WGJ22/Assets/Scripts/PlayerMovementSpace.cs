@@ -31,12 +31,18 @@ public class PlayerMovementSpace : MonoBehaviour
 
         animator.SetBool("isRunning", Horizontal != 0.0f);
 
-        Debug.DrawRay(transform.position, Vector3.down * 0.1578557f, Color.red);
-        if (Physics2D.Raycast(transform.position, Vector3.down, 0.1f))
+        float rayDistance = 1.0f;
+        RaycastHit2D raycast = Physics2D.Raycast(transform.position, Vector2.down, rayDistance);
+        Debug.Log(raycast.collider);
+        Debug.DrawRay(transform.position, Vector2.down * rayDistance, Color.red);
+        if (raycast.collider != null)
         {
             Grounded = true;
+            //Debug.Log(Grounded);
         }
         else Grounded = false;
+
+        animator.SetBool("isJumping", !Grounded);
 
         // Salto
         if (Input.GetKeyDown(KeyCode.S) && Grounded)
