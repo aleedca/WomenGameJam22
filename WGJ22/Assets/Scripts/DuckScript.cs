@@ -22,22 +22,6 @@ public class DuckScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        // float vertExtent = Camera.main.GetComponent<Camera>().transform.localPosition.x;
-        // float horzExtent = vertExtent * Screen.width / Screen.height;
-        // float mapX = 100.0f;
-        // float mapY = 100.0f;
- 
-        // // Calculations assume map is position at the origin
-        // minX = horzExtent - mapX / 2.0f;
-        // maxX = mapX / 2.0f - horzExtent;
-        // minY = vertExtent - mapY / 2.0f;
-        // maxY = mapY / 2.0f - vertExtent;
-        // Debug.Log(minX);
-        // Debug.Log(minY);
-        // Debug.Log(maxX);
-        // Debug.Log(maxY);
-
         float maxX = Camera.main.GetComponent<Camera>().transform.localPosition.x;
         float minX = Camera.main.GetComponent<Camera>().transform.localPosition.x;
         changePos();
@@ -53,17 +37,20 @@ public class DuckScript : MonoBehaviour
 
     private void changePos(){
         maxX = Camera.main.GetComponent<Camera>().transform.localPosition.x + 10;
-        minX = Camera.main.GetComponent<Camera>().transform.localPosition.x - 10;
+        minX = Camera.main.GetComponent<Camera>().transform.localPosition.x - 20;
 
         Random rd;
         rd = new Random();
-        posX = maxX;
+        posX = maxX + (float)rd.Next(0, 20);;
         posY = (float)rd.Next(-2, 4);
         transform.position = new Vector2(posX, posY);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player" && collision.gameObject.GetComponent<PlayerMovement>())
+
+            changePos();
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
