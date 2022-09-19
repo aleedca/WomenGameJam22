@@ -2,7 +2,7 @@
 
 ## Upside Down
 
-### Sipnosis
+### Sinopsis
 Meimei y su gatito acostumbran a dar paseos por el Lago de Dim. A pesar de las leyendas que se escuchan sobre el lago, Meimei no cree en la magia… pero eso está a punto de cambiar cuando su gran amigo se ve metido en un gran problema que implicará abrir su mente en un mundo donde la forma de moverse a través del mundo es contraria al nuestro y la gravedad no parece seguir ninguna regla. ¡Ayuda a Meimei a salvar a su amigo! 
 
 ### Objetivo
